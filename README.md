@@ -1,8 +1,33 @@
- # Git Commit Conventions
+# Dun Schedular
+Cloud Job Schedular
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running for development and testing purposes. See Development for notes on how to deploy the project.
+
+### Prerequisties
+
+```
+TO BE ADDED
+```
+
+### Installing
+TO BE ADDED
+
+## Testing Environment
+TO BE ADDED
+
+### Code Style
+TO BE ADDED
+
+## Deployment
+TO BE ADDED
+
+## Git Commit Conventions
 These are the conventions for git commits made for this repo, Type is mandatory for all commits, optional scope defines where changes/additions originate.
 All Commits follow rules stated below.
 
-## Rules
+### Rules
 
 1. Separate subject from body with a blank line
 2. Limit the subject line to 50 characters
@@ -13,7 +38,7 @@ All Commits follow rules stated below.
 
 ---
 
-## Commit Message Stucture
+### Commit Message Stucture
 
 ```
 <type>[optional scope]: <Subject Line>
@@ -25,7 +50,7 @@ All Commits follow rules stated below.
 
 Type is mandetory, Pick a respective type listed below.
 
-## Commit Message Types
+### Commit Message Types
 
 * Fix
 * Feat
@@ -36,8 +61,15 @@ Type is mandetory, Pick a respective type listed below.
 * Test
 * Revert
 
-## Example Commit Message
+### Example Commit Message
 
 ```
 $ git commit -m "Fix: Typo in introduction to user guide"
 ```
+
+## Versioning
+For the versions available, see the [tags on this repository](https://github.com/DuunScheduler/DuunScheduler/tags). 
+
+## License
+This Project is licensed under MIT License - see the [LICENSE.MD](LICENSE.MD) file for details
+
