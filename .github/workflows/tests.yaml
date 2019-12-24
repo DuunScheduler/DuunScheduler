@@ -1,0 +1,42 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  root-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install top level dependencies
+        run: |
+          npm install --global lerna
+          lerna exec npm install
+
+  test-packages:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        package: [infrastructure, frontend, backend]
+        node: [12]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Test ${{ matrix.package }}
+        run: |
+          cd packages/${{ matrix.package }}
+          npm install
+          npm run test
