@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "@duunscheduler/frontend",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Justin Dray <justin@dray.be>",
@@ -24,6 +24,7 @@
     "url": "https://github.com/duunscheduler/duunscheduler/issues"
   },
   "dependencies": {
+    "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   },
   "devDependencies": {
