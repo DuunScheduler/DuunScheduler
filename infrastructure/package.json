@@ -25,7 +25,6 @@
     "@aws-cdk/aws-lambda": "^1.19.0",
     "@aws-cdk/aws-s3": "^1.19.0",
     "@aws-cdk/core": "^1.18.0",
-    "@duunscheduler/backend": "file:../backend",
     "@duunscheduler/frontend": "file:../frontend",
     "prettier": "^1.19.1",
     "source-map-support": "^0.5.16"
