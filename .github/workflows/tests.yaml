@@ -7,26 +7,12 @@ on:
   pull_request:
 
 jobs:
-  root-package:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install top level dependencies
-        run: |
-          npm install --global lerna
-          lerna exec npm install
-
-  test-packages:
+  test-components:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        package: [infrastructure, frontend, backend]
+        package: [infrastructure, frontend]
         node: [12]
 
     steps:
@@ -37,6 +23,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Test ${{ matrix.package }}
         run: |
-          cd packages/${{ matrix.package }}
+          cd ${{ matrix.package }}
           npm install
           npm run test

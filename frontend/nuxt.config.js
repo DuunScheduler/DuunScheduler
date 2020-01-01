@@ -1,7 +1,7 @@
-const colors = require('vuetify/es5/util/colors').default
+import colors from 'vuetify/es5/util/colors'
 
-module.exports = {
-  mode: 'universal',
+export default {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
