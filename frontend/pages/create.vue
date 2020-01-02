@@ -18,7 +18,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <v-card color="grey lighten-1" class="mb-12" height="400px"></v-card>
+            <CreateMethod />
             <v-btn color="primary" @click="e13 = 3">Continue</v-btn>
             <v-btn @click="e13 = 1" text>Cancel</v-btn>
           </v-stepper-content>
