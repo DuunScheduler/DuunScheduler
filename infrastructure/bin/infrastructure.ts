@@ -3,5 +3,9 @@ import "source-map-support/register";
 import cdk = require("@aws-cdk/core");
 import { InfrastructureStack } from "../lib/infrastructure-stack";
 
-const app = new cdk.App();
-new InfrastructureStack(app, "DuunSchedulerInfrastructure");
+async function main() {
+  const app = new cdk.App();
+  new InfrastructureStack(app, "DuunSchedulerInfrastructure");
+}
+
+main();
