@@ -18,7 +18,9 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <CreateMethod />
+            <CreateMethod v-if="creationType === 'lambda'" />
+            <CreateMethod v-else-if="creationType === 'fargate'" />
+            <CreateMethod v-else />
             <v-btn color="primary" @click="e13 = 3">Continue</v-btn>
             <v-btn @click="e13 = 1" text>Cancel</v-btn>
           </v-stepper-content>
@@ -46,7 +48,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      e13: 0
+      e13: 0,
+      creationType: 'lambda'
     }
   }
 })

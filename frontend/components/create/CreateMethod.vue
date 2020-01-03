@@ -1,11 +1,16 @@
-<template>
+<template v-if="lambda">
   <v-container class CreateMethod>
     <v-radio-group v-model="MethodType" mandatory>
       <v-radio label="ARN" value="arn" color="primary"></v-radio>
-      <v-radio label="From File" value="file" color="primary"></v-radio>
-      <v-radio label="New Function" value="newFun" color="primary"></v-radio>
+      <v-radio label="From File" value="file" color="primary" v-bind:disabled="isRadioDisabled"></v-radio>
+      <v-radio
+        label="New Function"
+        value="newFun"
+        color="primary"
+        v-bind:disabled="isRadioDisabled"
+      ></v-radio>
     </v-radio-group>
-    <p>Blah {{ this.message }}</p>
+    <p v-if="seen">{{ message }}</p>
   </v-container>
   <!-- <p>
     from file
@@ -21,16 +26,19 @@
 .CreateMethod {
   align-content: center;
   justify-content: center;
-  width: 20%;
+  width: 30%;
 }
 </style>
 
 
 <script>
-import Vue from 'vue'
-export default Vue.extend({
-  data: {
-    message: 'blah blah'
+export default {
+  data() {
+    return {
+      message: 'From File and New Function is comming soon!',
+      isRadioDisabled: true,
+      seen: true
+    }
   }
-})
+}
 </script>

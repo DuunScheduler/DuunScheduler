@@ -15,8 +15,8 @@
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-toolbar-title v-text="title" />
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn tile="true" @click.stop="fixed = !fixed">jobs</v-btn>
-      <v-btn tile="true">create</v-btn>
+      <v-btn tile true @click.stop="fixed = !fixed">jobs</v-btn>
+      <v-btn tile true click="/create">create</v-btn>
       <v-spacer />
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
