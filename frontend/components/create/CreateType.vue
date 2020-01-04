@@ -2,18 +2,18 @@
   <v-container size="400" class="ct-vc-1">
     <v-row>
       <v-col>
-        <v-radio-group v-model="radiosSelection" mandatory>
+        <v-radio-group v-model="radiosSelection" v-on:change="emitToParent" mandatory>
           <v-radio label="Lambda" value="lambda" color="primary"></v-radio>
-          <v-radio label="Fargate" value="fargate" color="primary"></v-radio>
+          <v-radio
+            label="Fargate"
+            value="fargate"
+            color="primary"
+            v-bind:disabled="isRadioDisabled"
+          ></v-radio>
           <v-radio label="SSM" value="ssm" color="primary" v-bind:disabled="isRadioDisabled"></v-radio>
         </v-radio-group>
         <!-- This changes depending on option selected -->
         <p>{{radiosOption}}</p>
-        <button v-on:click="say('hi')">Say hi</button>
-        <br />
-        <button v-on:click="say('bye')">Say bye</button>
-        <br />
-        <button v-on:click="warn('From cannot be submitted yet.', $event)">Submit</button>
       </v-col>
     </v-row>
   </v-container>
@@ -35,21 +35,16 @@
 
 <script>
 export default {
+  name: 'CreateType',
   data() {
     return {
       radiosSelection: 'lambda', // State of radio buttons
-      isRadioDisabled: true
+      isRadioDisabled: false
     }
   },
   methods: {
-    say: function(message) {
-      alert(message)
-    },
-    warn: function(message, event) {
-      if (event) {
-        event.preventDefault()
-      }
-      alert(message)
+    emitToParent(event) {
+      this.$emit('childToParent', this.$data.radiosSelection)
     }
   },
   computed: {
