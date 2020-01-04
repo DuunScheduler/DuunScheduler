@@ -19,7 +19,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <CreateMethod />
+            <CreateMethod :MethodType="creationType" />
             <v-btn color="primary" @click="stepperState = 3">Continue</v-btn>
             <v-btn @click="stepperState = 1" text>Cancel</v-btn>
           </v-stepper-content>
@@ -49,7 +49,7 @@ export default Vue.extend({
   data() {
     return {
       stepperState: 0,
-      creationType: ''
+      creationType: 'lambda'
     }
   },
   methods: {
