@@ -1,0 +1,18 @@
+{
+  "name": "duunscheduler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:duunscheduler/duunscheduler",
+  "author": "Justin Dray <justin@dray.be>",
+  "license": "MIT",
+  "scripts": {
+    "cdk": "cd infrastructure && yarn cdk $@",
+    "build-frontend": "cd frontend && yarn generate",
+    "deploy-infrastructure": "yarn cdk deploy",
+    "deploy": "yarn build-frontend && yarn deploy-infrastructure"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0-rc1",
+    "yarn": "^1.21.1"
+  }
+}
