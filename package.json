@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "jshint": "^2.11.0-rc1",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   }
 }
